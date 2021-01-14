@@ -1,22 +1,11 @@
 package main
 
 import (
-	"net/http"
-	"github.com/gin-gonic/gin"
+	"forYourStock-api-server/router"
 )
 
-func setRouter() *gin.Engine {
-	r := gin.Default()
-
-	r.GET("/", func(c *gin.Context) {
-		c.String(http.StatusOK, "Hello gin")
-	})
-
-	return r
-}
-
 func main() {
-	r := setRouter()
+	router.SetRouter()
 
-	r.Run(":8080")
+	router.Router.Run(":8080")
 }
