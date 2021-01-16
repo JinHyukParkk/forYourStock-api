@@ -2,7 +2,7 @@ package router
 
 import (
 	"github.com/gin-gonic/gin"
-	"forYourStock-api-server/controller"
+	"forYourStock-api/controller"
 )
 
 var Router *gin.Engine

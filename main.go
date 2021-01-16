@@ -1,7 +1,7 @@
 package main
 
 import (
-	"forYourStock-api-server/router"
+	"forYourStock-api/router"
 )
 
 func main() {
