@@ -3,6 +3,7 @@ package controller
 import (
 	"forYourStock/api"
 	"os"
+	"fmt"
 )
 
 func GetList() {
@@ -12,5 +13,6 @@ func GetList() {
 	api.GetCompanyList(key)
 
 	// 압출풀기
-	api.GetList()
+	go api.GetList()
+	fmt.Println("Call GetList")
 }
