@@ -1,9 +1,10 @@
 package router
 
 import (
-	"github.com/gin-gonic/gin"
-	"forYourStock-api/controller"
 	"fmt"
+	"forYourStock-api/controller"
+
+	"github.com/gin-gonic/gin"
 )
 
 var Router *gin.Engine
@@ -11,11 +12,11 @@ var Router *gin.Engine
 func SetRouter() {
 	Router = gin.Default()
 
-	api := Router.Group("/test")
+	test := Router.Group("/test")
 	{
-		api.GET("/v1", func(c *gin.Context) {
+		test.GET("/v1", func(c *gin.Context) {
 			controller.GetList()
-			
+
 			c.JSON(200, gin.H{
 				"msg": "good",
 			})
@@ -24,5 +25,12 @@ func SetRouter() {
 		})
 	}
 
-
+	api := Router.Group("/")
+	{
+		api.GET("/v1", func(c *gin.Context) {
+			c.JSON(200, gin.H{
+				"msg": "api good",
+			})
+		})
+	}
 }
