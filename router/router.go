@@ -2,6 +2,7 @@ package router
 
 import (
 	"forYourStock-api/controller/service"
+	routerv1 "forYourStock-api/router/v1.0"
 
 	"github.com/gin-gonic/gin"
 )
@@ -16,12 +17,8 @@ func SetRouter() {
 		test.GET("/v1", service.Test)
 	}
 
-	api := Router.Group("/")
+	api := Router.Group("/api")
 	{
-		api.GET("/v1", func(c *gin.Context) {
-			c.JSON(200, gin.H{
-				"msg": "api good",
-			})
-		})
+		routerv1.SetRouter(api)
 	}
 }
