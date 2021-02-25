@@ -9,6 +9,7 @@ import (
 
 var Router *gin.Engine
 
+// 함수명 수정할 것
 func SetRouter() {
 	Router = gin.Default()
 
