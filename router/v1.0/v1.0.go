@@ -12,3 +12,4 @@ func SetRouter(router *gin.RouterGroup) {
 		v1.GET("/ping", v1controller.Ping)
 	}
 }
+c
